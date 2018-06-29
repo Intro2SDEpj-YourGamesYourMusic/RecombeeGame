@@ -78,8 +78,12 @@ public interface Recombee {
 	@WebMethod(operationName="findGame")
     @WebResult(name="games") 
     public List<Game> findGame(@WebParam(name="name") String name);
-	
+
 	@WebMethod(operationName="randomUserByItem")
     @WebResult(name="obcjects") 
     public List<Object> randomUserByItem(@WebParam(name="name") String name);
+
+	@WebMethod(operationName="deleteUser")
+    @WebResult(name="result") 
+    public boolean deleteUser(@WebParam(name="user") String user);
 }

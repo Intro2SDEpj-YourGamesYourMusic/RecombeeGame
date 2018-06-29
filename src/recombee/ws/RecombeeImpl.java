@@ -28,6 +28,7 @@ import com.recombee.api_client.api_requests.DeleteBookmark;
 import com.recombee.api_client.api_requests.DeleteItem;
 import com.recombee.api_client.api_requests.DeletePurchase;
 import com.recombee.api_client.api_requests.DeleteRating;
+import com.recombee.api_client.api_requests.DeleteUser;
 import com.recombee.api_client.api_requests.ListItemPurchases;
 import com.recombee.api_client.api_requests.ListItems;
 import com.recombee.api_client.api_requests.ListUserBookmarks;
@@ -549,4 +550,16 @@ public class RecombeeImpl implements Recombee{
 		return list;
 	}
 	
+	
+	@Override
+	public boolean deleteUser(String user) {
+		try {
+			client.send(new DeleteUser(user));
+			return true;
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
